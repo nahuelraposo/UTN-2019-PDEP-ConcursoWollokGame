@@ -3,7 +3,7 @@
 ## Juego realizado con la biblioteca Wollok Game
 
 ![reemplazar por una animación del juego]
-(https://d33wubrfki0l68.cloudfront.net/1ba3cf64b23a4ac786d7432121abbd782794730c/ce83b/documentacion/conceptos/images/wollokcharacter.gif)
+(https://im4.ezgif.com/tmp/ezgif-4-c1a03dc1ccce.gif)
 
 ### Resumen:
 La version en wollok del clasico juego bomberman!
@@ -15,7 +15,11 @@ La version en wollok del clasico juego bomberman!
  Ambos jugadores inician siendo capaces de solo poner una bomba de alcance 1, pero las cajas puede soltar powerUPs que permitirán poner mas bomas o mejorar el alcance.
  Cuando la explosion de una bomba toca a un jugador, gana el otro.
  
-
+### Imágenes:
+https://i.gyazo.com/b5fd5a9cfeadbe11de31e485879a3a97.png
+https://i.gyazo.com/8f8038851642c317993c04176f4de09f.png
+https://i.gyazo.com/1621bdd3febba8be42b162e74e5440bc.png
+https://i.gyazo.com/0823dbd8da76827acea1336ffd228576.png
 
 ### Acerca de:
 
