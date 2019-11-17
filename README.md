@@ -2,7 +2,9 @@
 
 ## Juego realizado con la biblioteca Wollok Game
 
-![https://i.gyazo.com/45f954d1d8d2423d06bcad946c888cb7.mp4](https://d33wubrfki0l68.cloudfront.net/1ba3cf64b23a4ac786d7432121abbd782794730c/ce83b/documentacion/conceptos/images/wollokcharacter.gif)
+![reemplazar por una animación del juego]
+(https://i.gyazo.com/45f954d1d8d2423d06bcad946c888cb7.mp4)
+https://d33wubrfki0l68.cloudfront.net/1ba3cf64b23a4ac786d7432121abbd782794730c/ce83b/documentacion/conceptos/images/wollokcharacter.gif
 
 ### Resumen:
 La version en wollok del clasico juego bomberman!
