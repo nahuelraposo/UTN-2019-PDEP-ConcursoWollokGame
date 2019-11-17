@@ -68,7 +68,10 @@ object jugador1 inherits Bomberman{
 	
 	override method desaparecer(){
 		super()
-		pierde1.perder()
+		if(jugador2.jugadorVivo())
+			pierde1.perder()
+		else
+			empate.perder()
 	}
 }
 
@@ -82,7 +85,10 @@ object jugador2 inherits Bomberman{
 	
 	override method desaparecer(){
 		super()
-		pierde2.perder()
+		if(jugador1.jugadorVivo())
+			pierde2.perder()
+		else
+			empate.perder()
 	}
 }
 
@@ -140,6 +146,8 @@ class Perder{
 object pierde1 inherits Perder{override method image(){return "gano2.png"}}
 
 object pierde2 inherits Perder{override method image(){return "gano1.png"}}
+
+object empate inherits Perder{override method image(){return "empate.png"}}
 
 object pantallaDeInicio{
 	var imagen = false

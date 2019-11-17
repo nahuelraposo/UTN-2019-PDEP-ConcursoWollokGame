@@ -28,59 +28,34 @@ class Bomb inherits ObjetoVisualRemovible{
 		if(mapa.posicionQuePuedeSerAfectadaPorUnaBomba(position))
 			posicionesADesaparecer.add(position)
 			
-		self.revisarDer(position,alcance)
-		self.revisarIzq(position,alcance)
-		self.revisarAr(position,alcance)
-		self.revisarAb(position,alcance)
+		self.revisar(position,alcance,direccionArriba)
+		self.revisar(position,alcance,direccionAbajo)
+		self.revisar(position,alcance,direccionDerecha)
+		self.revisar(position,alcance,direccionIzquierda)
 
 		posicionesADesaparecer.forEach{unaPosicionAExplotar=>game.getObjectsIn(unaPosicionAExplotar).forEach{objeto => objeto.desaparecer()}}
 		posicionesDondeAgregarFuego.forEach{unaPosicion=>new Fuego(position=unaPosicion).spawn()}
 	}
 	
-	method revisarDer(posicion,alc){
-		if(alc!=0 and !mapa.esUnaPared(posicion.right(1))){
-				posicionesDondeAgregarFuego.add(posicion.right(1))
-			if(mapa.posicionQuePuedeSerAfectadaPorUnaBomba(posicion.right(1)))
-				posicionesADesaparecer.add(posicion.right(1))
+	method revisar(posicion,alc,direccion){
+		var posARevisar = direccion.mover(posicion)
+		if(alc!=0 and !mapa.esUnaPared(posARevisar)){
+				posicionesDondeAgregarFuego.add(posARevisar)
+			if(mapa.posicionQuePuedeSerAfectadaPorUnaBomba(posARevisar))
+				posicionesADesaparecer.add(posARevisar)
 			else
-				self.revisarDer(posicion.right(1),alc-1)
-		}
+				self.revisar(posARevisar,alc-1,direccion)
+		}	
 	}
-
-	method revisarIzq(posicion,alc){
-		if(alc!=0 and !mapa.esUnaPared(posicion.left(1))){
-				posicionesDondeAgregarFuego.add(posicion.left(1))
-			if(mapa.posicionQuePuedeSerAfectadaPorUnaBomba(posicion.left(1)))
-				posicionesADesaparecer.add(posicion.left(1))
-			else
-				self.revisarIzq(posicion.left(1),alc-1)
-		}
-	}
-	
-	method revisarAb(posicion,alc){
-		if(alc!=0 and !mapa.esUnaPared(posicion.down(1))){
-				posicionesDondeAgregarFuego.add(posicion.down(1))
-			if(mapa.posicionQuePuedeSerAfectadaPorUnaBomba(posicion.down(1)))
-				posicionesADesaparecer.add(posicion.down(1))
-			else
-				self.revisarAb(posicion.down(1),alc-1)
-		}
-	}
-
-	method revisarAr(posicion,alc){
-		if(alc!=0 and !mapa.esUnaPared(posicion.up(1))){
-				posicionesDondeAgregarFuego.add(posicion.up(1))
-			if(mapa.posicionQuePuedeSerAfectadaPorUnaBomba(posicion.up(1)))
-				posicionesADesaparecer.add(posicion.up(1))
-			else
-				self.revisarAr(posicion.up(1),alc-1)
-		}
-	}
-
 
 	method efectos(metodoNoSeUsa){}
 	override method image(){return "bombas.png"}
 }
+
+object direccionArriba{method mover(unaPosicion)=unaPosicion.up(1)}
+object direccionAbajo{method mover(unaPosicion)=unaPosicion.down(1)}
+object direccionDerecha{method mover(unaPosicion)=unaPosicion.right(1)}
+object direccionIzquierda{method mover(unaPosicion)=unaPosicion.left(1)}
 
 class Fuego inherits ObjetoVisualRemovible{
 	override method spawn(){
