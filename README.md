@@ -12,13 +12,13 @@
 
 ### Acerca de:
 
-Autores:
+Autores: Guido Lusin / Nahuel Raposo
 
-Docente/Curso/Institución:
+Docente/Curso/Institución: Lucas Spigariol, K2005, UTN FRBA
 
-Versión de wollok:
+Versión de wollok: 1.8.5
 
-Fecha:
+Fecha: 16/11/2019
 
 [Guía de herramientas](https://www.wollok.org/documentacion/conceptos/)
 
